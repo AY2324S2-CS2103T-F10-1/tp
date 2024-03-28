@@ -5,6 +5,7 @@ import static org.mockito.Mockito.verify;
 
 import java.nio.file.Path;
 
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
 import javafx.collections.FXCollections;
@@ -18,7 +19,12 @@ import seedu.address.model.AddressBook;
 import seedu.address.model.ReadOnlyAddressBook;
 import seedu.address.model.person.Person;
 
-public class MainWindowTest extends BaseTest {
+public class MainWindowTest {
+
+    @BeforeAll
+    public static void initToolkit() throws Exception {
+        JavaFxTestInitializer.initToolkit();
+    }
 
     @Test
     public void handleHelp_success() {

@@ -6,7 +6,17 @@ import org.testfx.api.FxToolkit;
 import javafx.application.Application;
 import javafx.stage.Stage;
 
-public class BaseTest {
+/**
+ * Utility class for initializing the JavaFX toolkit before running tests.
+ */
+public class JavaFxTestInitializer {
+
+    /**
+     * Initializes the JavaFX toolkit before running tests.
+     * This method should be called before any JavaFX components are created or tested.
+     *
+     * @throws Exception If an error occurs during the initialization.
+     */
     @BeforeAll
     public static void initToolkit() throws Exception {
         FxToolkit.registerPrimaryStage();
@@ -16,7 +26,7 @@ public class BaseTest {
     private static class ApplicationStub extends Application {
         @Override
         public void start(Stage stage) {
-            // Add any necessary initialization code here
+            // No initialization code needed
         }
     }
 }
